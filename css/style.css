@@ -1,0 +1,218 @@
+@font-face {
+  font-family: "Hanken Grotesk";
+  font-weight: 100 900;
+  src: url("../assets/fonts/HankenGrotesk-VariableFont_wght.ttf") format("truetype");
+}
+
+:root {
+  --clr-reaction: hsl(0, 100%, 67%);
+  --clr-memory: hsl(39, 100%, 56%);
+  --clr-verbal: hsl(166, 100%, 37%);
+  --clr-visual: hsl(234, 85%, 45%);
+
+  --bg-gradient-start: hsl(252, 100%, 67%);
+  --bg-gradient-end: hsl(241, 81%, 54%);
+  --cir-gradient-start: hsla(256, 72%, 46%, 1);
+  --cir-gradient-end: hsla(241, 72%, 46%, 0);
+
+  --clr-background: hsl(0, 0%, 100%);
+  --crl-score-title: hsl(221, 100%, 96%);
+  --clr-score-text: hsl(241, 100%, 89%);
+  --clr-btn: hsl(224, 30%, 27%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Hanken Grotesk";
+  font-size: 18px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  width: 740px;
+  border-radius: 2em;
+  box-shadow: 10px 10px 20px hsla(256, 72%, 46%, .1);
+}
+
+.score {
+  background-image: linear-gradient(180deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 70%);
+  color: var(--clr-score-text);
+  text-align: center;
+  padding: 2.2em 4em 3.2em;;
+  border-radius: 2em;
+  width: 370px;
+}
+
+.score__title {
+  font-size: 1.2em;
+  margin-bottom: 1.6em;
+  font-weight: bold;
+}
+
+.score__points {
+  background-image: linear-gradient(var(--cir-gradient-start), var(--cir-gradient-end));
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 1.5em;
+  font-weight: bold;
+}
+
+.points-acquired {
+  font-size: 3.7em;
+  color: var(--crl-score-title);
+}
+
+.feedback-title {
+  font-size: 1.8em;
+  color: var(--crl-score-title);
+  margin-bottom: .6em;
+}
+
+.summary {
+  padding: 2em;
+  width: 370px;
+}
+
+.summary__title {
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+  color: var(--clr-btn);
+}
+
+.summary__label {
+  width: 100%;
+  margin-bottom: .7em;
+  padding: 1em;
+  border-radius: .5em;
+  color: hsla(224, 30%, 27%, .5);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.summary__label .label-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: .5em;
+}
+
+.summary__label .label-title {
+  margin-right: auto;
+}
+
+.summary__label .label-score {
+  color: var(--clr-btn);
+}
+
+.summary__label.reaction {
+  background-color: hsla(0, 100%, 67%, .1);
+}
+
+.summary__label.reaction .label-title {
+  color: var(--clr-reaction);
+}
+
+.summary__label.memory {
+  background-color: hsla(39, 100%, 56%, .1);
+}
+
+.summary__label.memory .label-title {
+  color: var(--clr-memory);
+}
+
+.summary__label.verbal {
+  background-color: hsla(166, 100%, 37%, .1);
+}
+
+.summary__label.verbal .label-title {
+  color: var(--clr-verbal);
+}
+
+.summary__label.visual {
+  background-color: hsla(234, 85%, 45%, .1);
+}
+
+.summary__label.visual .label-title {
+  color: var(--clr-visual);
+}
+
+.btn {
+  width: 100%;
+  background-color: var(--clr-btn);
+  color: var(--clr-background);
+  padding: 1em;
+  font-size: 18px;
+  border-radius: 30px;
+  border: none;
+  margin-top: 1.5em;
+}
+
+.btn:hover {
+  background-image: linear-gradient(180deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 70%);
+  color: var(--clr-score-text);
+}
+
+@media (max-width: 750px) {
+  .container {
+    width: 380px;
+    flex-direction: column;
+    box-shadow: none;
+  }
+
+  .score {
+    border-radius: 0 0 2em 2em;
+    padding: 1.4em 2.5em 2.2em;
+    width: 380px;
+  }
+
+  .score__title {
+    font-size: 1.1em;
+    margin-bottom: 1.1em;
+  }
+
+  .score__points {
+    width: 145px;
+    height: 145px;
+    margin-bottom: 1.3em;
+  }
+
+  .points-acquired {
+    font-size: 3.3em;
+  }
+
+  .feedback-title {
+    font-size: 1.4em;
+    margin-bottom: .4em;
+  }
+
+  .summary {
+    padding: 1.2em;
+    width: 380px;
+  }
+
+  .summary__title {
+    font-size: 1.1em;
+    margin-bottom: 1.2em;
+  }
+
+  .btn {
+    margin-top: .5em;
+    margin-bottom: .5em;
+  }
+}
